@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <!-- Don't need this branding here; should be replaced with the header from the website -->
-    <!-- <img src="./assets/logo.png"> -->
-    <header class="header">
-      Website navbar here
-    </header>
+    <img src="./assets/logo.png">
     <router-view></router-view>
   </div>
 </template>
@@ -22,17 +18,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  
-}
-
-.header {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-}
-
-router-view {
-  position: relative;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 </style>

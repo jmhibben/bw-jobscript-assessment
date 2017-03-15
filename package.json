@@ -13,9 +13,6 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "less": "^2.7.2",
-    "less-loader": "^3.0.0",
     "node-viewerjs": "^0.6.4",
     "pug": "^2.0.0-beta11",
     "vue": "^2.2.2",
