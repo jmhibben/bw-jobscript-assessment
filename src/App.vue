@@ -2,10 +2,14 @@
   <div id="app">
     <!-- Don't need this branding here; should be replaced with the header from the website --> 
     <!-- <img src="./assets/logo.png"> --> 
-    <header class="header"> 
-      Website navbar here 
-    </header>
-    <router-view></router-view>
+    <div class="header fixed-header flush-top-left full-width" role="navigation">
+      <div class="">
+        <a href="#">Website navbar here</a>
+      </div>
+    </div>
+    <div id="view">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -15,22 +19,29 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import "./assets/less/helpers";
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-} 
- 
-.header { 
-  position: fixed; 
-  height: 50px; 
-  width: 100%; 
-} 
- 
-router-view { 
-  position: relative; 
+  overflow-y: auto;
 }
+
+#view {
+  .margin-top(70px);
+  .z(0)
+}
+
+.header {
+  height: 40px; 
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 3px black;
+  .padding(10px);
+  background-color: white;
+  .z(5)
+} 
 </style>
+
