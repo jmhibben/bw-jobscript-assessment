@@ -25,19 +25,19 @@ div(class="col-xs-12 col-m-6")
 </template>-->
 
 <template>
-<div class="">
-  <h1 class="">Progress</h1>
-  <div class="">
-    <ol>
+<div id="progress" v-bind:style='{float: float ? "left" : "none"}'>
+  <h1>Progress</h1>
+  <div>
+    <ul>
       <li>Section 1</li>
       <li>Section 2</li>
       <li>Section 3</li>
       <li>Section 4</li>
       <li>Section 5</li>
-    </ol>
+    </ul>
   </div>
-  <div class="col-xs-12">
-    <div class="col-xs-12">
+  <div>
+    <div>
       Completed {{completed}} of 8 sections:
     </div>
     <div class="progress">
@@ -54,6 +54,10 @@ export default {
     completed: {
       type: String,
       required: true
+    },
+    float: {
+      type: Boolean,
+      required: false
     }
   },
   computed: {
@@ -65,15 +69,40 @@ export default {
 </script>
 
 <style scoped lang="less">
+@import "../assets/less/helpers";
 @base: rgb(120, 180, 245);
 
-progress {
-  color: @base;
-  width: 90%;
-  height: 10px;
+#progress {
+    .border();
+    .margin(10px);
+    .padding(5px);
+    display: block;
 
-  &::-moz-progress-bar {
-    background-color: @base;
+    h1 {
+      .no-margin;
+      font-size: 1.2em;
+    }
+  }
+
+  progress {
+    color: @base;
+    width: 90%;
+    height: 10px;
+
+    &::-moz-progress-bar {
+      background-color: @base;
+    }
+  }
+
+@media (min-width: 800px) {
+  #progress {
+    width: 45%;
+  }  
+}
+
+@media (max-width: 799px) {
+  #progress {
+    width: 90%;
   }
 }
 </style>
