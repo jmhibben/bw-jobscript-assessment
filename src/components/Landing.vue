@@ -1,7 +1,7 @@
 <template lang="pug">
 div(id="landing")
-  bwprogress(completed=3)
-  bwtips
+  bwprogress(completed=3 float=true)
+  bwtips(float=true)
 
   bwassessment
 </template>
@@ -24,21 +24,7 @@ export default {
 <style scoped lang="less">
 @import "../assets/less/helpers";
 
-@media all and (max-width: 800px) {
-  #landing {
-    display: block;
-    clear: both;
-  }
-}
-
-@media all and (min-width: 801px) {
-  #landing {
-    display: inline-block;
-    float: left;
-  }
-}
-
-bwprogress, bwtips {
-  display: inherit;
+#landing {
+  display: block;
 }
 </style>

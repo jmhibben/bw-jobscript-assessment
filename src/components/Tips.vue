@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="col-xs-12 col-m-6")
+div(id="tips" v-bind:style='{float: float ? "left" : "none"}')
   h1 Tips
   ol
     li Tips from the original assessment would go here
@@ -10,7 +10,13 @@ div(class="col-xs-12 col-m-6")
 
 <script>
 export default {
-  name: 'tips'
+  name: 'tips',
+  props: {
+    float: {
+      type: Boolean,
+      required: false
+    }
+  }
 }
 </script>
 
@@ -18,19 +24,33 @@ export default {
 @import "../assets/less/helpers";
 
 #tips {
-  border: 1px solid black;
-  border-radius: 2px;
-  box-shadow: 0 0 2px black;
-  margin-top: 10px;
+  .border();
+  .margin(10px);
+  .padding(5px);
+  display: block;
+  min-width: 45%;
 
   h1 {
     font-size: 1.2em;
     text-align: left;
     margin-left: 5px;
+    .no-margin;
   }
 
   ol {
     text-align: left;
+  }
+}
+
+@media (min-width: 800px) {
+  #tips {
+    width: 45%;
+  }
+}
+
+@media (max-width: 799px) {
+  #tips {
+    width: 90%;
   }
 }
 </style>
