@@ -1,30 +1,16 @@
-<!--<template lang="pug">
-div(class="col-xs-12 col-m-6")
+<template lang="pug">
+div(id="progress" v-bind:style='{float: float ? "left" : "none"}')
   h1 Progress
-  div(id="sections")
-    ol
-      li Section 1
-      li Section 2
-      li Section 3
-      li Section 4
-      li Section 5
-      li Section 6
-      li Section 7
-      li Section 8
-  
-  div() Completed {{completed}} of 8 sections:
+  div(id="list")
+    div(v-for="c in completed") Section {{c}}
+    div(v-for="d in (8 - completed)") Section {{d}}
+  div
+    div Completed {{completed}} of 8 sections:
     div(class="progress")
-      div(
-        class="progress-bar progress-bar-info"
-        role="progressbar"
-        aria-valuemin="0"
-        v-bind:aria-valuenow='completed'
-        aria-valuemax="8"
-        v-bind:style="{width: completedPercent + '%'}"
-      )
-</template>-->
+      progress(max=8 v-bind:value="completed")
+</template>
 
-<template>
+<!--<template>
 <div id="progress" v-bind:style='{float: float ? "left" : "none"}'>
   <h1>Progress</h1>
   <div>
@@ -45,7 +31,7 @@ div(class="col-xs-12 col-m-6")
     </div>
   </div>
 </div>
-</template>
+</template>-->
 
 <script>
 export default {
