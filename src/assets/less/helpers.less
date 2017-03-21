@@ -1,29 +1,9 @@
-.full-width {
-  width: 100%;
-}
-
 .no-padding {
   padding: 0px;
 }
 
-.padding(@amount: 5px) {
-  padding: @amount;
-}
-
-.padding-left(@amount: 5px) {
-  padding-left: @amount;
-}
-
-.padding-right(@amount: 5px) {
-  padding-right: @amount;
-}
-
-.padding-top(@amount: 5px) {
-  padding-top: @amount;
-}
-
-.padding-bottom(@amount: 5px) {
-  padding-bottom: @amount;
+.padding {
+  padding: 5px;
 }
 
 .fixed-header {
@@ -34,45 +14,13 @@
   margin: 0px;
 }
 
-.margin(@size: 5px) {
-  margin: @size;
-}
-
-.margin-top(@size: 5px) {
-  margin-top: @size;
-}
-
-.margin-right(@size: 5px) {
-  margin-right: @size;
-}
-
-.margin-bottom(@size: 5px) {
-  margin-bottom: @size;
-}
-
-.margin-left(@size: 5px) {
-  margin-left: @size;
-}
-
-.flush-top {
-  top: 0px;
-}
-
-.flush-left {
-  left: 0px;
-}
-
-.flush-right {
-  right: 0px;
-}
-
-.flush-bottom {
-  bottom: 0px;
+.margin {
+  margin: 5px;
 }
 
 .flush-top-left {
-  .flush-top();
-  .flush-left();
+  top: 0px;
+  left: 0px;
 }
 
 .no-border {
@@ -97,14 +45,6 @@
 
 .border-right(@size: 1px; @style: solid; @color: black) {
   border-right: @arguments;
-}
-
-.max-width(@width) {
-  max-width: @width;
-}
-
-.min-width(@width) {
-  min-width: @width;
 }
 
 .z(@index: 1) {

@@ -1,7 +1,8 @@
 <template lang="pug">
 div(id="landing")
-  bwprogress(completed=3 float=true)
-  bwtips(float=true)
+  .top-matter
+    bwprogress(completed=3 float=true)
+    bwtips(float=true)
 
   bwassessment
 </template>
@@ -26,5 +27,11 @@ export default {
 
 #landing {
   display: block;
+}
+
+.top-matter {
+  position: relative;
+  margin: 0px auto;
+  width: 95%;
 }
 </style>
