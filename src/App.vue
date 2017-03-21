@@ -2,7 +2,7 @@
   <div id="app">
     <!-- Don't need this branding here; should be replaced with the header from the website --> 
     <!-- <img src="./assets/logo.png"> --> 
-    <div class="header fixed-header flush-top-left full-width" role="navigation">
+    <div class="header fixed-header flush-top-left" role="navigation">
       <div class="">
         <a href="#">Website navbar here</a>
       </div>
@@ -31,7 +31,7 @@ export default {
 }
 
 #view {
-  .margin-top(70px);
+  margin-top: 70px;
   .z(0)
 }
 
@@ -39,9 +39,10 @@ export default {
   height: 40px; 
   border-bottom: 1px solid black;
   box-shadow: 0 0 3px black;
-  .padding(10px);
+  padding: 10px;
   background-color: white;
-  .z(5)
+  width: 100%;
+  .z(5);
 } 
 </style>
 

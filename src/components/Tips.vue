@@ -25,10 +25,9 @@ export default {
 
 #tips {
   .border();
-  .margin(10px);
-  .padding(5px);
+  margin: 10px;
+  padding: 5px;
   display: block;
-  min-width: 45%;
 
   h1 {
     font-size: 1.2em;
@@ -44,13 +43,13 @@ export default {
 
 @media (min-width: 800px) {
   #tips {
-    width: 45%;
+    width: 46%;
   }
 }
 
 @media (max-width: 799px) {
   #tips {
-    width: 90%;
+    width: 92%;
   }
 }
 </style>
