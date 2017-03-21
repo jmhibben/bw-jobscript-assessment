@@ -1,39 +1,16 @@
 <template lang="pug">
-div(id="progress" v-bind:style='{float: float ? "left" : "none"}')
+div(id="progress" v-bind:style='{float: isFloat}')
   h1 Progress
-  div(id="list")
-    div(v-for="c in completed") Section {{c}}
-    div(v-for="d in (8 - completed)") Section {{d}}
-  div
+  bwsection(v-bind:completed-sections="completedSections")
+  div(id="progress-bar")
     div Completed {{completed}} of 8 sections:
     div(class="progress")
       progress(max=8 v-bind:value="completed")
 </template>
 
-<!--<template>
-<div id="progress" v-bind:style='{float: float ? "left" : "none"}'>
-  <h1>Progress</h1>
-  <div>
-    <ul>
-      <li>Section 1</li>
-      <li>Section 2</li>
-      <li>Section 3</li>
-      <li>Section 4</li>
-      <li>Section 5</li>
-    </ul>
-  </div>
-  <div>
-    <div>
-      Completed {{completed}} of 8 sections:
-    </div>
-    <div class="progress">
-      <progress max=8 v-bind:value="completed"></progress>
-    </div>
-  </div>
-</div>
-</template>-->
-
 <script>
+import Section from './Section'
+
 export default {
   name: 'bwprogress',
   props: {
@@ -47,27 +24,42 @@ export default {
     }
   },
   computed: {
-    completedPercent: function () {
-      return this.completed / 8
+    completedSections: function () {
+      let sections = []
+      for (let i = 0; i < 8; ++i) {
+        sections.push((i + 1 <= this.completed))
+      }
+      return sections
+    },
+    isFloat: function () {
+      return this.float ? 'left' : 'none'
     }
+  },
+  components: {
+    bwsection: Section
   }
 }
 </script>
 
 <style scoped lang="less">
 @import "../assets/less/helpers";
-@base: rgb(120, 180, 245);
+@import '../assets/less/colors';
 
 #progress {
-    .border();
-    .margin(10px);
-    .padding(5px);
-    display: block;
+  .border();
+  margin: 10px;
+  padding: 5px;
+  display: block;
 
-    h1 {
-      .no-margin;
-      font-size: 1.2em;
-    }
+  h1 {
+    .no-margin;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+}
+
+  #progress-bar {
+    margin-top: 10px;
   }
 
   progress {
@@ -82,13 +74,13 @@ export default {
 
 @media (min-width: 800px) {
   #progress {
-    width: 45%;
+    width: 46%;
   }  
 }
 
 @media (max-width: 799px) {
   #progress {
-    width: 90%;
+    width: 92%;
   }
 }
 </style>
