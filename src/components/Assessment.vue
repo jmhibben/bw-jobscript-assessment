@@ -2,11 +2,11 @@
 #assessment-container.inner-container
   h1.header-1 JobScript Assessment
   router-view
-  bwbutton.button-back(
+  bwbutton.button.button-back(
     v-on:completed="regress"
     v-bind:disabled="!disableBack"
   ) Back
-  bwbutton.button-next(
+  bwbutton.button.button-next(
     v-on:completed="progress"
     v-bind:disabled="!disableNext"
   ) Next/Submit
@@ -24,7 +24,13 @@ export default {
         // probably kind of hacky to do it this way, but it made the logic here a bit easier
         'page1',
         'page2',
-        'page3'
+        'page3',
+        'page4',
+        'page5',
+        'page6',
+        'page7',
+        'page8',
+        'done'
       ]
     }
   },
@@ -74,7 +80,25 @@ export default {
   .no-margin;
   .border();
   .padding();
+  margin-bottom: 10px;
   background-color: lighten(@base, 30%);
   display: block;
+}
+
+.button { 
+  .no-border;
+  margin-top: 5px;
+  width: 150px;
+  height: 40px;
+}
+
+.button-back {
+  left: 0px;
+  background-color: @normal;
+}
+
+.button-next {
+  float: right;
+  background-color: @success;
 }
 </style>
