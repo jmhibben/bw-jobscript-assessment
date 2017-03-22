@@ -1,0 +1,59 @@
+@import './colors';
+@import './helpers';
+
+.row {
+  background-color: #eee;
+  display: block;
+  .border();
+}
+
+.row-odd {
+  background-color: @base;
+}
+
+.col {
+  display: inline-block;
+}
+
+.col.question {
+  .border-bottom();
+  min-height: 40px;
+}
+
+.col.container {
+  position: relative;
+  right: 0px;
+}
+
+.col.answer {
+  display: inline-block;
+  margin: 0 auto;
+  width: 18%;
+  bottom: 0px;
+}
+
+.header {
+  font-weight: bold;
+}
+
+@media all and (max-width: 360px) {
+  .col.container {
+    width: 100%;
+  }
+
+  .col.question {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 361px){
+  .col.container {
+    width: 38%;
+  }
+
+  .col.question {
+    width: 60%;
+    .no-border;
+    .border-right();
+  }
+}

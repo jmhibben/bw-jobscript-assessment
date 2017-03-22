@@ -1,0 +1,71 @@
+.outer-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inner-container {
+  display: block;
+  width: 95%;
+  margin: 0;
+  padding: 0;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.padding {
+  padding: 5px;
+}
+
+.fixed-header {
+  position: fixed;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.margin {
+  margin: 5px;
+}
+
+.flush-top-left {
+  top: 0px;
+  left: 0px;
+}
+
+.header-1 {
+  .no-margin;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.no-border {
+  border: 0px none black;
+}
+
+.border(@size: 1px; @style: solid; @color: black) {
+  border: @arguments;
+}
+
+.border-bottom(@size: 1px; @style: solid; @color: black) {
+  border-bottom: @arguments;
+}
+
+.border-left(@size: 1px; @style: solid; @color: black) {
+  border-left: @arguments;
+}
+
+.border-top(@size: 1px; @style: solid; @color: black) {
+  border-top: @arguments;
+}
+
+.border-right(@size: 1px; @style: solid; @color: black) {
+  border-right: @arguments;
+}
+
+.z(@index: 1) {
+  z-index: @index;
+}
