@@ -32,6 +32,8 @@ export default {
 
 #view {
   margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
   .z(0)
 }
 

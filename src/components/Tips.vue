@@ -1,5 +1,5 @@
 <template lang="pug">
-div(id="tips" v-bind:style='{float: float ? "left" : "none"}')
+#tips.inner-container
   h1 Tips
   ol
     li Tips from the original assessment would go here
@@ -25,7 +25,8 @@ export default {
 
 #tips {
   .border();
-  margin: 10px;
+  margin-bottom: 10px;
+  position: relative;
   padding: 5px;
   display: block;
 
@@ -38,18 +39,6 @@ export default {
 
   ol {
     text-align: left;
-  }
-}
-
-@media (min-width: 800px) {
-  #tips {
-    width: 46%;
-  }
-}
-
-@media (max-width: 799px) {
-  #tips {
-    width: 92%;
   }
 }
 </style>
