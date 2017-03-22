@@ -1,10 +1,18 @@
 <template lang="pug">
-div(id="landing")
-  .top-matter
-    bwprogress(completed=3 float=true)
-    bwtips(float=true)
+#landing.outer-container
+  bwprogress(
+    v-bind:completed="completedString"
+    float=true
+  )
 
-  bwassessment
+  bwtips(float=true)
+
+  bwassessment(
+    v-on:progress="incrementCompleted"
+    v-on:regress="decrementCompleted"
+    v-bind:disableBack="canGoBack"
+    v-bind:disableNext="canGoForward"
+  )
 </template>
 
 <script>
@@ -18,6 +26,45 @@ export default {
     bwprogress: Progress,
     bwtips: Tips,
     bwassessment: Assessment
+  },
+  data () {
+    return {
+      completed: 0,
+      canGoBack: false,
+      canGoForward: true
+    }
+  },
+  methods: {
+    incrementCompleted () {
+      if (this.completed < 8) {
+        this.completed += 1
+      }
+      this.toggleButtons()
+    },
+    decrementCompleted () {
+      if (this.completed > 0) {
+        this.completed -= 1
+      }
+      this.toggleButtons()
+    },
+    toggleButtons () {
+      if (this.completed === 0) {
+        this.canGoBack = false
+      } else {
+        this.canGoBack = true
+      }
+
+      if (this.completed === 8) {
+        this.canGoForward = false
+      } else {
+        this.canGoForward = true
+      }
+    }
+  },
+  computed: {
+    completedString () {
+      return this.completed.toString()
+    }
   }
 }
 </script>
@@ -27,11 +74,5 @@ export default {
 
 #landing {
   display: block;
-}
-
-.top-matter {
-  position: relative;
-  margin: 0px auto;
-  width: 95%;
 }
 </style>
