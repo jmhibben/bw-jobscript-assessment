@@ -1,6 +1,6 @@
 <template lang="pug">
-div(id="progress" v-bind:style='{float: isFloat}')
-  h1 Progress
+#progress.inner-container
+  h1.header-1 Progress
   bwsection(v-bind:completed-sections="completedSections")
   div(id="progress-bar")
     div Completed {{completed}} of 8 sections:
@@ -47,40 +47,22 @@ export default {
 
 #progress {
   .border();
-  margin: 10px;
+  margin-bottom: 10px;
   padding: 5px;
   display: block;
-
-  h1 {
-    .no-margin;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-  }
 }
 
-  #progress-bar {
-    margin-top: 10px;
-  }
-
-  progress {
-    color: @base;
-    width: 90%;
-    height: 10px;
-
-    &::-moz-progress-bar {
-      background-color: @base;
-    }
-  }
-
-@media (min-width: 800px) {
-  #progress {
-    width: 46%;
-  }  
+#progress-bar {
+  margin-top: 10px;
 }
 
-@media (max-width: 799px) {
-  #progress {
-    width: 92%;
+progress {
+  color: @base;
+  width: 90%;
+  height: 10px;
+
+  &::-moz-progress-bar {
+    background-color: @base;
   }
 }
 </style>
