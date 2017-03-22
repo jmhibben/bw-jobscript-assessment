@@ -1,6 +1,7 @@
 <template lang="pug">
 .part
-  p Description of section goes here.
+  p The radio buttons below are grouped together by "row," which is differentiated by color.
+  p For screens larger than 360px, the answer buttons will appear in-line with the questions. Smaller devices will display the answers underneath the question.
 
   template(v-for="i in 10")
     .row(v-bind:class="(i % 2 === 0) ? '' : 'row-odd'")
