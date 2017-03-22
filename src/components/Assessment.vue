@@ -88,7 +88,8 @@ export default {
 .button { 
   .no-border;
   margin-top: 5px;
-  width: 150px;
+  max-width: 150px;
+  width: 40%;
   height: 40px;
 }
 
