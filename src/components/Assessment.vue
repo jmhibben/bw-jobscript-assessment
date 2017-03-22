@@ -21,6 +21,7 @@ export default {
     return {
       rindex: 0,
       routes: [
+        // probably kind of hacky to do it this way, but it made the logic here a bit easier
         'page1',
         'page2',
         'page3'
@@ -40,6 +41,8 @@ export default {
   },
   methods: {
     progress () {
+      // notify Landing that we want to move forward in the assessment
+      // this only allows the Landing to push the change to the Progress component
       this.$emit('progress')
       // Progress to the next route
       ++this.rindex
@@ -52,10 +55,11 @@ export default {
       this.$router.push(route)
     },
     regress () {
+      // notify the Landing that we want to move backward in the assessment
+      // this only allows the Landing to push the change to the Progress component
       this.$emit('regress')
       // Go back to the previous route
       --this.rindex
-      console.log(this.$route.path.split('/'))
       this.$router.push(this.routes[this.rindex])
     }
   }
@@ -72,8 +76,5 @@ export default {
   .padding();
   background-color: lighten(@base, 30%);
   display: block;
-
-  h1 {
-  }
 }
 </style>
