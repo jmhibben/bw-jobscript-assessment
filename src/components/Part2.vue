@@ -44,17 +44,12 @@
 </template>
 
 <script>
-import Button from './Button'
-
 export default {
   name: 'part2',
   data () {
     return {
       name: 'part2'
     }
-  },
-  components: {
-    bwbutton: Button
   }
 }
 </script>
