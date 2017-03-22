@@ -1,6 +1,6 @@
 <template lang="pug">
 .part
-  p Some Text...{{name}}
+  p The main drawback to the current prototype is that each part is its own component; however, this should be relatively easy to fix.
 </template>
 
 <script>
