@@ -2,10 +2,9 @@
 #landing.outer-container
   bwprogress(
     v-bind:completed="completedString"
-    float=true
   )
 
-  bwtips(float=true)
+  bwtips
 
   bwassessment(
     v-on:progress="incrementCompleted"
